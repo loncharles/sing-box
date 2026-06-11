@@ -185,7 +185,7 @@ func (t *Outbound) start() error {
 			}
 		}
 	}
-	err = torInstance.EnableNetwork(t.ctx, true)
+	err = torInstance.EnableNetwork(t.ctx, false)
 	if err != nil {
 		return err
 	}
