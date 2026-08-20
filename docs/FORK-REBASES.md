@@ -63,6 +63,10 @@ in `common/tlsfragment/`). Left as an environment-conditional failure to
 resolve in CI or on a machine with unfiltered 1.1.1.1 access.
 
 **Result commits (top to bottom on `rebase/v1.14.0-beta.8`)**:
+- `1c19b87` — [lx-port SPEC-019] urltest: balancer tests (26 balancer + 10 pool health)
+- `3579f86` — [lx-port SPEC-019] urltest: balancer core + Dial/Listen integration
+- `b4ab353` — [lx-port SPEC-019] urltest: options + constants for balancer
+- `ba01096` — docs: initial fork ledger (this file's earliest revision)
 - `4550791` — Make tor outbound startup non-blocking
 - `ba6ab6c` — Allow routing_mark coexistence with auto_redirect
 - (base) `0c23cdb` — upstream v1.14.0-beta.8 Bump version
