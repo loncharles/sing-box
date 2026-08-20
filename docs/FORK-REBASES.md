@@ -42,12 +42,7 @@ back to `control.RoutingMark(mark)` (the sing common wrapper, which itself
 uses the same platform partition upstream). Squashed via `git commit --fixup`
 + `git rebase -i --autosquash`.
 
-**go.mod pre-push state**: `replace github.com/sagernet/sing-tun` currently
-points at a local path (`/Users/lon/workspace/sing-tun-fork`) because the
-sing-tun rebase branch (`rebase/v0.8.12-dev` @ `be3b0c7`) is not yet pushed
-to `loncharles/sing-tun`. Before this sing-box branch is pushed, the replace
-directive must be flipped to a proper `github.com/loncharles/sing-tun`
-pseudo-version referencing the pushed sing-tun commit.
+**go.mod**: `replace github.com/sagernet/sing-tun => github.com/loncharles/sing-tun v0.8.10-0.20260820184418-82f3217956aa` — the pseudo-version references the pushed `rebase/v0.8.12-dev` HEAD (`82f3217`). Historical note: during the rebase work the replace directive briefly pointed at a local path `/Users/lon/workspace/sing-tun-fork` while sing-tun's rebase branch was unpushed; the flip to the pseudo-version landed in commit `677971b`.
 
 **Build verification**: `go build ./cmd/sing-box/` clean on Darwin and
 cross-compiled Linux amd64, with the fabric-gateway build tag set
@@ -63,6 +58,8 @@ in `common/tlsfragment/`). Left as an environment-conditional failure to
 resolve in CI or on a machine with unfiltered 1.1.1.1 access.
 
 **Result commits (top to bottom on `rebase/v1.14.0-beta.8`)**:
+- `677971b` — go.mod: point sing-tun replace at pushed rebase/v0.8.12-dev
+- `e07398d` — docs: record SPEC-019 balancer commits in fork ledger
 - `1c19b87` — [lx-port SPEC-019] urltest: balancer tests (26 balancer + 10 pool health)
 - `3579f86` — [lx-port SPEC-019] urltest: balancer core + Dial/Listen integration
 - `b4ab353` — [lx-port SPEC-019] urltest: options + constants for balancer
